@@ -1,0 +1,17 @@
+CREATE EXTERNAL TABLE dbo.staging_rider (
+    rider_id VARCHAR(50),
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    address VARCHAR(200),
+    birthday VARCHAR(50),
+    account_start_date VARCHAR(50),
+    account_end_date VARCHAR(50),
+    is_member VARCHAR(10)
+)
+WITH (
+    LOCATION = 'rawdata/riders.csv',
+    DATA_SOURCE = BikeShareDataSource,
+    FILE_FORMAT = SynapseDelimitedTextFormat
+);
+
+SELECT TOP 10 * FROM dbo.staging_rider;

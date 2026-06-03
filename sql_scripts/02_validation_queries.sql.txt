@@ -1,0 +1,16 @@
+SELECT TOP 10 * FROM dbo.staging_payment;
+SELECT TOP 10 * FROM dbo.staging_rider;
+SELECT TOP 10 * FROM dbo.staging_station;
+SELECT TOP 10 * FROM dbo.staging_trip;
+
+SELECT TOP 10 * FROM dbo.dim_rider;
+SELECT TOP 10 * FROM dbo.dim_station;
+SELECT TOP 10 * FROM dbo.dim_date;
+SELECT TOP 10 * FROM dbo.fact_payment;
+SELECT TOP 10 * FROM dbo.fact_trip;
+
+SELECT COUNT(*) FROM dbo.fact_trip;
+SELECT COUNT(*) FROM dbo.fact_payment;
+SELECT COUNT(*) FROM dbo.dim_rider;
+SELECT COUNT(*) FROM dbo.dim_station;
+SELECT COUNT(*) FROM dbo.dim_date;

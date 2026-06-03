@@ -1,0 +1,13 @@
+CREATE EXTERNAL TABLE dbo.staging_station (
+    station_id VARCHAR(50),
+    name VARCHAR(200),
+    latitude FLOAT,
+    longitude FLOAT
+)
+WITH (
+    LOCATION = 'rawdata/stations.csv',
+    DATA_SOURCE = BikeShareDataSource,
+    FILE_FORMAT = SynapseDelimitedTextFormat
+);
+
+SELECT TOP 10 * FROM dbo.staging_station;

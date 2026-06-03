@@ -1,0 +1,13 @@
+CREATE EXTERNAL TABLE dbo.staging_payment (
+    payment_id VARCHAR(50),
+    payment_date VARCHAR(50),
+    amount VARCHAR(50),
+    rider_id VARCHAR(50)
+)
+WITH (
+    LOCATION = 'rawdata/payments.csv',
+    DATA_SOURCE = BikeShareDataSource,
+    FILE_FORMAT = SynapseDelimitedTextFormat
+);
+
+SELECT TOP 10 * FROM dbo.staging_payment;

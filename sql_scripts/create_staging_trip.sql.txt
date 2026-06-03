@@ -1,0 +1,16 @@
+CREATE EXTERNAL TABLE dbo.staging_trip (
+    trip_id VARCHAR(100),
+    rideable_type VARCHAR(50),
+    start_at VARCHAR(50),
+    ended_at VARCHAR(50),
+    start_station_id VARCHAR(50),
+    end_station_id VARCHAR(50),
+    rider_id VARCHAR(50)
+)
+WITH (
+    LOCATION = 'rawdata/trips.csv',
+    DATA_SOURCE = BikeShareDataSource,
+    FILE_FORMAT = SynapseDelimitedTextFormat
+);
+
+SELECT TOP 10 * FROM dbo.staging_trip;
